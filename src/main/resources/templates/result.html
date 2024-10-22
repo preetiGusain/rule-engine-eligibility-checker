@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--The result page provides feedback to users after form submission, 
+confirming successful data processing or displaying validation errors. 
+It also offers options to return to the input form or perform additional actions.-->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p class="message" th:text="${message}">No Message to display.</p>
+
+    <!-- Link to go back to the user input form. 
+    'th:href' is used to dynamically set the URL for the link -->
+    <a th:href="@{/user-form}">Go back to form</a>
+</body>
+</html>
