@@ -5,7 +5,8 @@ import javax.validation.constraints.NotEmpty;
 //This class represents the attributes for user input - age, department,
 // income, and spend.
 // It contains validation annotations to ensure the data meets specific criteria.
-public class userAttributes {
+
+public class UserAttributes {
     @Min(value = 0, message = "Age must be a positive number")
     private int age;
 
@@ -18,6 +19,7 @@ public class userAttributes {
     @Min(value = 0, message = "Spend must be a positive number")
     private double spend;
 
+
     //Getters and Setters (Retrieve and change the value of private variables
     public int getAge(){
         return age;
@@ -26,7 +28,7 @@ public class userAttributes {
         this.age = age;
     }
 
-
+    
     public String getDepartment(){
         return department;
     }
@@ -41,7 +43,8 @@ public class userAttributes {
     public void setIncome(Double income){
         this.income = income;
     }
-    
+
+
     public double getSpend(){
         return spend;
     }
