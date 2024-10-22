@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Form</title>
+</head>
+<body>
+    <h1>User Input Form</h1>
+    
+    <!--th:action is used to specify the form submission URL,
+    and th:object binds the form to the UserAttributes model -->
+    <form th:action = "@{/submit-form}" th:objects = "{UserAttributes}" method="post">
+
+        <!--Age-->
+        <!-- th:field binds the input value to the 'age' attribute in UserAttributes -->
+        <label for="age">Age:</label>
+        <input type="number" th:field="*{age}" id="age" required/>
+        <!--Handling age error-->
+        <span th:if="${fields.hasErrors('age')}" th:errors="*{age}"></span>
+
+        <!--Department-->
+        <label for="department">Department:</label>
+        <input type="text" th:field="*{department}" id="department" required/>
+        <span th:if="${fields.hasErrors('department')}" th:errors="*{department}"></span>
+
+        <!--Income-->
+        <label for="income">Income:</label>
+        <input type="number" th:field="*{income}" id="income" required/>
+        <span th:if="${fields.hasErrors('income')}" th:errors="*{income}"></span>
+        
+        <!--Spend-->
+        <label for="spend">Spend:</label>
+        <input type="number" th:field="*{spend}" id="spend" required/>
+        <span th:if="${fields.hasErrors('spend')}" th:errors="*{spend}"></span>
+
+        <!--Submit Button-->
+        <button type="submit">Submit</button>
+
+    </form>
+    
+    <!--Display the success message after form submission-->
+    <p th:if="${message}" th:text="${message}"></p>
+</body>
+</html>
