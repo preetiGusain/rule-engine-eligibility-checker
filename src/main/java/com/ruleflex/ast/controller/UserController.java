@@ -1,4 +1,4 @@
-package com.ruleflex.ast;
+package com.ruleflex.ast.controller;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
@@ -6,12 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.ruleflex.ast.model.UserAttributes;
 
 //This class handles the HTTP requests related to user input.
 // It displays the user form and processes form submissions, including validation.
 
 @RestController
-public class userController {
+public class UserController {
     @RequestMapping(value = "/user-form", method = RequestMethod.GET)
     public UserAttributes showForm(){
         return new UserAttributes();

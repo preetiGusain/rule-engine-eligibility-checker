@@ -1,4 +1,4 @@
-package com.ruleflex.ast;
+package com.ruleflex.ast.model;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
@@ -28,7 +28,7 @@ public class UserAttributes {
         this.age = age;
     }
 
-    
+
     public String getDepartment(){
         return department;
     }
