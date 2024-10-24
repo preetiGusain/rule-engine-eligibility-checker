@@ -1,4 +1,4 @@
-package com.ruleflex.ast.service;
+package com.ruleflex.ast.model;
 
 public class EvaluationResult {
 

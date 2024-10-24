@@ -1,8 +1,9 @@
 package com.ruleflex.ast.service;
 
 import java.util.List;
-import org.apache.tomcat.util.digester.Rule;
 import org.springframework.stereotype.Service;
+
+import com.ruleflex.ast.model.EvaluationResult;
 import com.ruleflex.ast.model.UserAttributes;
 
 //RuleService class is responsible for implementing the logic related to rule management and user evaluation. 
@@ -10,7 +11,7 @@ import com.ruleflex.ast.model.UserAttributes;
 @Service
 public class RuleService {
 
-    public List<Rule> getAllRules() {
+    public List<com.ruleflex.ast.model.Rule> getAllRules() {
         return null;
         // Logic to retrieve rules from the database or in-memory storage
         // Return a list of Rule objects

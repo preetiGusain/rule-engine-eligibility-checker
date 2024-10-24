@@ -1,14 +1,17 @@
 package com.ruleflex.ast.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.ruleflex.ast.model.UserAttributes;
-import com.ruleflex.ast.service.RuleService;
 
+import com.ruleflex.ast.model.EvaluationResult;
+import com.ruleflex.ast.model.Rule;
+import com.ruleflex.ast.model.UserAttributes;
+import com.ruleflex.ast.service.EvaluationService;
+import com.ruleflex.ast.service.RuleService;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -22,6 +25,9 @@ import java.util.List;
 public class RuleController {
 
     private RuleService ruleService;
+    
+    @Autowired
+    private EvaluationService evaluationService;
 
     @GetMapping("/rules")
     public List<Rule> getRules() {
@@ -30,7 +36,7 @@ public class RuleController {
     }
 
     @PostMapping("/evaluate")
-    public EvaluationsResult evaluateUser(@RequestBody @Valid UserAttributes userAttributes) {
+    public EvaluationResult evaluateUser(@RequestBody @Valid UserAttributes userAttributes) {
         // Logic to evaluate the user based on the rules
         return evaluationService.evaluate(userAttributes); // example return
     }
